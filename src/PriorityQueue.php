@@ -124,6 +124,7 @@ class PriorityQueue implements Countable, IteratorAggregate, Serializable
      *
      * @return int
      */
+	#[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->items);
@@ -161,6 +162,7 @@ class PriorityQueue implements Countable, IteratorAggregate, Serializable
      *
      * @return SplPriorityQueue
      */
+	#[\ReturnTypeWillChange]
     public function getIterator()
     {
         $queue = $this->getQueue();
@@ -172,6 +174,7 @@ class PriorityQueue implements Countable, IteratorAggregate, Serializable
      *
      * @return string
      */
+	#[\ReturnTypeWillChange]
     public function serialize()
     {
         return serialize($this->items);
@@ -185,6 +188,7 @@ class PriorityQueue implements Countable, IteratorAggregate, Serializable
      * @param  string $data
      * @return void
      */
+	#[\ReturnTypeWillChange]
     public function unserialize($data)
     {
         foreach (unserialize($data) as $item) {

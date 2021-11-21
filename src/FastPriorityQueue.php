@@ -173,6 +173,7 @@ class FastPriorityQueue implements Iterator, Countable, Serializable
      *
      * @return integer
      */
+	#[\ReturnTypeWillChange]
     public function count()
     {
         return $this->count;
@@ -183,6 +184,7 @@ class FastPriorityQueue implements Iterator, Countable, Serializable
      *
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function current()
     {
         switch ($this->extractFlag) {
@@ -203,6 +205,7 @@ class FastPriorityQueue implements Iterator, Countable, Serializable
      *
      * @return integer
      */
+	#[\ReturnTypeWillChange]
     public function key()
     {
         return $this->index;
@@ -233,6 +236,7 @@ class FastPriorityQueue implements Iterator, Countable, Serializable
      * Set the iterator pointer to the next element in the queue
      * without removing the previous element
      */
+	#[\ReturnTypeWillChange]
     public function next()
     {
         if (false === next($this->values[$this->maxPriority])) {
@@ -250,6 +254,7 @@ class FastPriorityQueue implements Iterator, Countable, Serializable
      *
      * @return boolean
      */
+	#[\ReturnTypeWillChange]
     public function valid()
     {
         return isset($this->values[$this->maxPriority]);
@@ -258,6 +263,7 @@ class FastPriorityQueue implements Iterator, Countable, Serializable
     /**
      * Rewind the current iterator
      */
+	#[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->subPriorities = $this->priorities;
@@ -287,6 +293,7 @@ class FastPriorityQueue implements Iterator, Countable, Serializable
      *
      * @return string
      */
+	#[\ReturnTypeWillChange]
     public function serialize()
     {
         $clone = clone $this;
@@ -306,6 +313,7 @@ class FastPriorityQueue implements Iterator, Countable, Serializable
      * @param  string $data
      * @return void
      */
+	#[\ReturnTypeWillChange]
     public function unserialize($data)
     {
         foreach (unserialize($data) as $item) {
